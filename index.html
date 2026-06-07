@@ -5,84 +5,198 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Writing Portfolio</title>
     <style>
-        /* This section controls how the website looks (CSS) */
-        body {
-            font-family: Georgia, serif; /* Elegant font perfect for reading */
-            line-height: 1.6;
-            max-width: 650px; /* Keeps text lines from getting too wide to read */
-            margin: 40px auto;
-            padding: 0 20px;
-            color: #222222;
-            background-color: #fcfcfc;
+        /* Base Setup */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
+        body {
+            font-family: Georgia, serif;
+            line-height: 1.7;
+            color: #222;
+            background-color: #fafafa;
+            padding-top: 60px; /* Space for fixed nav */
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #ffffff;
+            border-bottom: 1px solid #eee;
+            z-index: 100;
+        }
+        .nav-container {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: #111;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            margin-left: 20px;
+            font-family: sans-serif;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #000;
+        }
+
+        /* Header / Hero */
         header {
             text-align: center;
-            margin-bottom: 50px;
-            border-bottom: 2px solid #333;
-            padding-bottom: 20px;
+            padding: 60px 0;
+            border-bottom: 1px solid #eee;
         }
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 5px;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            color: #111;
         }
         .subtitle {
-            color: #666;
             font-style: italic;
-            font-size: 1.1rem;
+            color: #666;
+            font-size: 1.2rem;
         }
-        article {
-            margin-bottom: 50px;
+
+        /* Sections */
+        section {
+            padding: 50px 0;
+            border-bottom: 1px solid #eee;
         }
         h2 {
+            font-family: sans-serif;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        /* About Section */
+        .about-text {
+            font-size: 1.15rem;
+        }
+
+        /* Writing Section */
+        .post {
+            margin-bottom: 40px;
+        }
+        .post-title {
             font-size: 1.8rem;
             color: #111;
             margin-bottom: 5px;
         }
-        .date {
-            font-size: 0.9rem;
-            color: #888;
-            margin-top: 0;
-            margin-bottom: 20px;
+        .post-date {
+            font-family: sans-serif;
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 15px;
         }
-        p {
+        .post p {
             font-size: 1.15rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 15px;
         }
+
+        /* Contact Section */
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+        .social-links a {
+            color: #111;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        /* Footer */
         footer {
             text-align: center;
-            font-size: 0.9rem;
-            color: #777;
-            margin-top: 80px;
-            border-top: 1px solid #eee;
-            padding-top: 20px;
+            padding: 40px 0;
+            font-family: sans-serif;
+            font-size: 0.85rem;
+            color: #aaa;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>My Writing Space</h1>
-        <p class="subtitle">Essays, stories, and daily thoughts.</p>
-    </header>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">My Space</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#writing">Writing</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-    <main>
-        <article>
-            <h2>The Title of Your First Story</h2>
-            <p class="date">Published on June 8, 2026</p>
-            <p>This is where your story or essay goes. Just replace this text with whatever you want to say. Because this is plain HTML, you wrap your paragraphs in "p" tags to separate them cleanly.</p>
-            <p>The layout is designed to be completely distraction-free, making it easy for your readers to focus entirely on your words.</p>
-        </article>
+    <div class="container">
+        
+        <header>
+            <h1>My Writing Space</h1>
+            <p class="subtitle">Essays, stories, and deep thoughts.</p>
+        </header>
 
-        <article>
-            <h2>Another Interesting Piece</h2>
-            <p class="date">Published on May 15, 2026</p>
-            <p>This is your second post. To add a third one, you can just copy everything from the "article" tag to the closing "/article" tag and paste it right below this one.</p>
-        </article>
-    </main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p class="about-text">
+                Welcome to my digital home. I am a writer passionate about storytelling and sharing ideas. 
+                Here you will find a collection of my latest articles, creative stories, and personal essays.
+            </p>
+        </section>
 
-    <footer>
-        <p>&copy; 2026 My Writing Space. Built from scratch.</p>
-    </footer>
+        <section id="writing">
+            <h2>Recent Writing</h2>
+
+            <div class="post">
+                <h3 class="post-title">The Art of Keeping It Simple</h3>
+                <p class="post-date">June 8, 2026</p>
+                <p>This is where your main article text goes. The fonts and layout are highly optimized for easy reading on both laptops and smartphones.</p>
+                <p>You can add as many paragraphs as you like here by using standard paragraph tags.</p>
+            </div>
+
+            <div class="post">
+                <h3 class="post-title">Another Story Title</h3>
+                <p class="post-date">May 24, 2026</p>
+                <p>This is your second post. The navigation bar at the top allows users to jump directly to your writing from anywhere on the page.</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Connect With Me</h2>
+            <p style="margin-bottom: 20px; font-size: 1.1rem;">Feel free to reach out or follow my work across the web:</p>
+            <div class="social-links">
+                <a href="mailto:your-email@example.com">Email Me</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+                <a href="https://github.com" target="_blank">GitHub</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 My Writing Space. Built with HTML & CSS.</p>
+        </footer>
+
+    </div>
 
 </body>
 </html>
