@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Writing Portfolio</title>
+    <style>
+        /* This section controls how the website looks (CSS) */
+        body {
+            font-family: Georgia, serif; /* Elegant font perfect for reading */
+            line-height: 1.6;
+            max-width: 650px; /* Keeps text lines from getting too wide to read */
+            margin: 40px auto;
+            padding: 0 20px;
+            color: #222222;
+            background-color: #fcfcfc;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            color: #666;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+        article {
+            margin-bottom: 50px;
+        }
+        h2 {
+            font-size: 1.8rem;
+            color: #111;
+            margin-bottom: 5px;
+        }
+        .date {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.15rem;
+            margin-bottom: 1.5rem;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 80px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Writing Space</h1>
+        <p class="subtitle">Essays, stories, and daily thoughts.</p>
+    </header>
+
+    <main>
+        <article>
+            <h2>The Title of Your First Story</h2>
+            <p class="date">Published on June 8, 2026</p>
+            <p>This is where your story or essay goes. Just replace this text with whatever you want to say. Because this is plain HTML, you wrap your paragraphs in "p" tags to separate them cleanly.</p>
+            <p>The layout is designed to be completely distraction-free, making it easy for your readers to focus entirely on your words.</p>
+        </article>
+
+        <article>
+            <h2>Another Interesting Piece</h2>
+            <p class="date">Published on May 15, 2026</p>
+            <p>This is your second post. To add a third one, you can just copy everything from the "article" tag to the closing "/article" tag and paste it right below this one.</p>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 My Writing Space. Built from scratch.</p>
+    </footer>
+
+</body>
+</html>
