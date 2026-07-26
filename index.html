@@ -3,200 +3,368 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Writing Portfolio</title>
+    <title>Saurab Barua - Business Analyst & Data Analyst</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Base Setup */
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-card: #334155;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #0284c7;
+        }
+
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
+
         body {
-            font-family: Georgia, serif;
-            line-height: 1.7;
-            color: #222;
-            background-color: #fafafa;
-            padding-top: 60px; /* Space for fixed nav */
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
         }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+
         .container {
-            max-width: 700px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Navigation Bar */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: #ffffff;
-            border-bottom: 1px solid #eee;
-            z-index: 100;
-        }
-        .nav-container {
-            max-width: 700px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-        }
-        .logo {
-            font-weight: bold;
-            font-size: 1.2rem;
-            text-decoration: none;
-            color: #111;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: #555;
-            margin-left: 20px;
-            font-family: sans-serif;
-            font-size: 0.9rem;
-            transition: color 0.2s;
-        }
-        .nav-links a:hover {
-            color: #000;
+        /* Header */
+        header {
+            padding: 80px 0 40px;
+            border-bottom: 1px solid var(--bg-card);
         }
 
-        /* Header / Hero */
-        header {
-            text-align: center;
-            padding: 60px 0;
-            border-bottom: 1px solid #eee;
-        }
         h1 {
             font-size: 2.8rem;
+            font-weight: 700;
             margin-bottom: 10px;
-            color: #111;
+            color: #ffffff;
         }
+
         .subtitle {
-            font-style: italic;
-            color: #666;
             font-size: 1.2rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
         }
 
         /* Sections */
         section {
-            padding: 50px 0;
-            border-bottom: 1px solid #eee;
+            padding: 60px 0;
+            border-bottom: 1px solid var(--bg-card);
         }
+
         h2 {
-            font-family: sans-serif;
-            font-size: 1.3rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #777;
-            margin-bottom: 30px;
-        }
-
-        /* About Section */
-        .about-text {
-            font-size: 1.15rem;
-        }
-
-        /* Writing Section */
-        .post {
-            margin-bottom: 40px;
-        }
-        .post-title {
             font-size: 1.8rem;
-            color: #111;
-            margin-bottom: 5px;
-        }
-        .post-date {
-            font-family: sans-serif;
-            font-size: 0.85rem;
-            color: #999;
-            margin-bottom: 15px;
-        }
-        .post p {
-            font-size: 1.15rem;
-            margin-bottom: 15px;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 10px;
         }
 
-        /* Contact Section */
-        .social-links {
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        /* Skills Grid */
+        .skills-grid {
             display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background-color: var(--bg-secondary);
+            color: var(--text-main);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid var(--bg-card);
+        }
+
+        /* Cards for Projects, Experience, Education */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
-        .social-links a {
-            color: #111;
-            font-weight: bold;
-            text-decoration: underline;
+
+        .card {
+            background-color: var(--bg-secondary);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--bg-card);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .meta {
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .card ul {
+            list-style-type: none;
+            margin-top: 10px;
+        }
+
+        .card ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .card ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
         }
 
         /* Footer */
         footer {
             text-align: center;
             padding: 40px 0;
-            font-family: sans-serif;
-            font-size: 0.85rem;
-            color: #aaa;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .contact-info { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="logo">My Space</a>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#writing">Writing</a>
-                <a href="#contact">Contact</a>
+    <header>
+        <div class="container">
+            <h1>Saurab Barua</h1>
+            <div class="subtitle">Aspiring Business Analyst | Data & ERP Systems Specialist</div>
+            <div class="contact-info">
+                <span>📍 Dortmund, Germany</span>
+                <span>📧 <a href="mailto:saurabbgct@gmail.com">saurabbgct@gmail.com</a></span>
+                <span>📱 +49-17627478666</span>
+                <span>🔗 <a href="https://linkedin.com/in/s-baru" target="_blank">linkedin.com/in/s-baru</a></span>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <div class="container">
+    <main class="container">
         
-        <header>
-            <h1>My Writing Space</h1>
-            <p class="subtitle">Essays, stories, and deep thoughts.</p>
-        </header>
-
-        <section id="about">
-            <h2>About Me</h2>
-            <p class="about-text">
-                Welcome to my digital home. I am a writer passionate about storytelling and sharing ideas. 
-                Here you will find a collection of my latest articles, creative stories, and personal essays.
-            </p>
-        </section>
-
-        <section id="writing">
-            <h2>Recent Writing</h2>
-
-            <div class="post">
-                <h3 class="post-title">The Art of Keeping It Simple</h3>
-                <p class="post-date">June 8, 2026</p>
-                <p>This is where your main article text goes. The fonts and layout are highly optimized for easy reading on both laptops and smartphones.</p>
-                <p>You can add as many paragraphs as you like here by using standard paragraph tags.</p>
-            </div>
-
-            <div class="post">
-                <h3 class="post-title">Another Story Title</h3>
-                <p class="post-date">May 24, 2026</p>
-                <p>This is your second post. The navigation bar at the top allows users to jump directly to your writing from anywhere on the page.</p>
+        <!-- Technical Skills -->
+        <section id="skills">
+            <h2>Technical Skills & Tools</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">SAP Analytics Cloud (SAC)</span>
+                <span class="skill-tag">Power BI & DAX</span>
+                <span class="skill-tag">Advanced Excel & Power Query</span>
+                <span class="skill-tag">Python & Jupyter</span>
+                <span class="skill-tag">MySQL & SQL Server</span>
+                <span class="skill-tag">SAP S/4HANA & SAP Fiori</span>
+                <span class="skill-tag">SAP MM (Procurement)</span>
+                <span class="skill-tag">SAP SD (Order to Pay)</span>
+                <span class="skill-tag">Tableau</span>
+                <span class="skill-tag">KPI & Ad-hoc Reporting</span>
+                <span class="skill-tag">Atlassian JIRA</span>
+                <span class="skill-tag">Agile & Waterfall Methods</span>
             </div>
         </section>
 
-        <section id="contact">
-            <h2>Connect With Me</h2>
-            <p style="margin-bottom: 20px; font-size: 1.1rem;">Feel free to reach out or follow my work across the web:</p>
-            <div class="social-links">
-                <a href="mailto:your-email@example.com">Email Me</a>
-                <a href="https://twitter.com" target="_blank">Twitter</a>
-                <a href="https://github.com" target="_blank">GitHub</a>
+        <!-- Featured Projects -->
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Master's Thesis Project</h3>
+                    <div class="meta">Tools: SQL Server, MySQL, Python, Power BI</div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Bridging Data Engineering and Strategic Forecasting (Writing in Progress)</p>
+                    <ul>
+                        <li>Migrated 3.4 million records from SQL Server to a MySQL environment.</li>
+                        <li>Developed and trained time-series AI forecasting models using XGBoost, Prophet, and Chronos-2.</li>
+                        <li>Designed and deployed interactive Power BI dashboards for executive reporting.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Strategic Insight with SAC</h3>
+                    <div class="meta">Tools: SAP Analytics Cloud, Excel</div>
+                    <ul>
+                        <li>Optimized sales and conducted economic forecasting.</li>
+                        <li>Developed predictive models for business insights.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Power BI Sales Analysis</h3>
+                    <div class="meta">Tools: Power BI, Power Query, DAX, Excel</div>
+                    <ul>
+                        <li>Explored key business potentials by analyzing core sales data.</li>
+                        <li>Implemented RFM (Recency, Frequency, Monetary) customer segmentation.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Time Series Sales Forecasting</h3>
+                    <div class="meta">Tools: Google Colab, Python, PowerPoint</div>
+                    <ul>
+                        <li>Forecasted future sales figures through the implementation of advanced time-series AI models.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Meta Utility Function Analysis</h3>
+                    <div class="meta">Tools: Python, Jupyter, MIRO, Excel</div>
+                    <ul>
+                        <li>Conducted mathematical analysis for the selection of the best predictive model.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Solar-Thermal System Analysis</h3>
+                    <div class="meta">Tools: Python, Jupyter, MIRO</div>
+                    <ul>
+                        <li>Analyzed technical performance and gas consumption factors for energy systems.</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
-        <footer>
-            <p>&copy; 2026 My Writing Space. Built with HTML & CSS.</p>
-        </footer>
+        <!-- Work Experience -->
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Operations Associate</h3>
+                    <div class="meta">Flink • Dortmund, Germany • 04/2023 – Present</div>
+                    <ul>
+                        <li>Picked, packed, and processed customer orders quickly and accurately.</li>
+                        <li>Monitored stock, expiry dates, and overall product quality to ensure freshness standards.</li>
+                        <li>Maintained a clean, organized workspace while demonstrating strong teamwork.</li>
+                    </ul>
+                </div>
 
-    </div>
+                <div class="card">
+                    <h3>Production Intern</h3>
+                    <div class="meta">KDS Group • Bangladesh • 07/2017 – 12/2017</div>
+                    <ul>
+                        <li>Assisted in material planning and procurement scheduling to align with production timelines.</li>
+                        <li>Supported supplier coordination and monitored material quality in line with procurement standards.</li>
+                        <li>Generated KPI-based performance reports for management review.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="education">
+            <h2>Education</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>M.Sc. in Informatics & Business</h3>
+                    <div class="meta">FH Südwestfalen • Hagen, Germany • 2023 – Present</div>
+                    <ul>
+                        <li><strong>Core Focus:</strong> ERP & System Analytics.</li>
+                        <li><strong>Projects:</strong> Driving Corp. SAP with a focus on procurement and logistics; Smart Factories (SAP Leonardo for Industry 4.0).</li>
+                        <li><strong>Key Courses:</strong> Enhancement & Configuration of ERP Systems, IT Service Management, Business Process & Workflow Management.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Bachelor in Business Administration</h3>
+                    <div class="meta">BGC Trust University • Bangladesh • 2014 – 2018</div>
+                    <ul>
+                        <li><strong>Core Focus:</strong> Project Management, Strategic Management, Research Methodology, Business Finance.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications & Awards -->
+        <section id="certificates">
+            <h2>Certifications & Awards</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Award</h3>
+                    <div class="meta">DAAD STIBET I Scholarship</div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Awarded by Deutscher Akademischer Austauschdienst (01/2025).</p>
+                </div>
+
+                <div class="card">
+                    <h3>SAP Certifications</h3>
+                    <div class="meta">Enterprise Systems</div>
+                    <ul>
+                        <li>SAP MM - Sourcing & Procurement with SAP S/4HANA (FH Brandenburg)</li>
+                        <li>SAP S/4HANA Sourcing & Procurement (Udemy)</li>
+                        <li>Introducing Joule Studio</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Professional & Languages</h3>
+                    <div class="meta">General Qualifications</div>
+                    <ul>
+                        <li>Project Management Foundation - Procurement (LinkedIn)</li>
+                        <li>Microsoft Excel - Beginner to Advanced (Udemy)</li>
+                        <li>German: B2 Course Completion (EURO Basha) & telc Deutsch B1</li>
+                        <li>English: Fluent</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Saurab Barua. Built with clean HTML & CSS for GitHub Pages.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
